@@ -137,7 +137,7 @@ function send_slack() {
                 "
 
   logger "send type [slack], slack url [${OPS_SLACK_URL}]"
-  logger "send message [${_slack_msg}]"
+  logger "send message [$NOTIFY_MSG}]"
   logger "send payload [${payload}]"
 
   echo "$curl -X POST -w %{http_code} -s -o /dev/null -d payload=${payload} ${OPS_SLACK_URL}"
@@ -197,6 +197,6 @@ INVALID_ARGUMENTS=$*
 [ -z "${NOTIFY_MSG}" ] && show_usage && err_exit ${RC_NOTIFY_MSG}
 [ -z "${NOTIFY_LEVEL}" ] && show_usage && err_exit ${RC_NOTIFY_LEVEL}
  
-logger "script Input: SEND_TYPE = '${SEND_TYPE}', NOTIFY_LEVEL = '${NOTIFY_LEVEL}', NOTIFY_MSG = '${NOTIFY_MSG}'" "INFO"
+logger "script Input: NOTIFY_TYPE = '${NOTIFY_TYPE}', NOTIFY_LEVEL = '${NOTIFY_LEVEL}', NOTIFY_MSG = '${NOTIFY_MSG}'" "INFO"
 
 send "${NOTIFY_TYPE}" "${NOTIFY_MSG}" "${NOTIFY_LEVEL}"

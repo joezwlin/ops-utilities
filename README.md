@@ -1,5 +1,5 @@
 # ops utilities
-Set of utility scripts for general DevOps usage.
+The set of utility scripts for general DevOps usage.
 
 # common-util.sh
 Basically all ops scripts MUST source this file to locate the DIR `${OPS_DEPLOY_ENV}` where you run the ops scrtips, and using the function slogger to have a good readibility format which support ANSI color stdout, furthermore if you want to have colorful output in CICD tools then you have to install the relative plugin to them e.g. Jenkins -> ansiColor.
